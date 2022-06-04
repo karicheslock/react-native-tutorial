@@ -7,11 +7,12 @@ import {
 } from 'react-native';
 
 
-function ScreenA({navigation}) {
+function ScreenA({navigation, route}) {
 
     const onPressHandler = () => {
       navigation.navigate('Screen_B')
       //navigation.replace('Screen_B')
+      //navigation.toggleDrawer();
     }
   
     return (
@@ -26,7 +27,13 @@ function ScreenA({navigation}) {
           <Text style={styles.text}>
             Go to Screen B
           </Text>
+          {/* <Text style={styles.text}>
+            Toggle Drawer
+          </Text> */}
         </Pressable>
+        <Text style={styles.text}>
+          {route.params?.Message}
+        </Text>
       </View>
     )
   }
